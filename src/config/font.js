@@ -1,3 +1,4 @@
+
 export const font = (text) => {
   if (text.length === 0) return [];
   const charMap = [
@@ -80,6 +81,9 @@ export const font = (text) => {
       text: applyCharMap(cursiveCharMap, text),
     },
     {
+      text: applyCharMap(cursiveCharMapLight, text),
+    },
+    {
       text: applyCharMap(invertedSquaresCharMap, text),
     },
     {
@@ -124,6 +128,7 @@ function cuteText(text) {
 function cuteSentence(sentence) {
     return sentence.split(/([\s,]+)/gi).map(cuteWord).join("");
 }
+
 
 
 //character Function
@@ -201,75 +206,11 @@ function quotes() {
     if (qi === 2) qi = 0;
     return qa[qi];
 }
-function scriptify(text) {
-    var map = {
-        "0": "𝟢",
-        "1": "𝟣",
-        "2": "𝟤",
-        "3": "𝟥",
-        "4": "𝟦",
-        "5": "𝟧",
-        "6": "𝟨",
-        "7": "𝟩",
-        "8": "𝟪",
-        "9": "𝟫",
-        "a": "𝒶",
-        "b": "𝒷",
-        "c": "𝒸",
-        "d": "𝒹",
-        "e": "𝑒",
-        "f": "𝒻",
-        "g": "𝑔",
-        "h": "𝒽",
-        "i": "𝒾",
-        "j": "𝒿",
-        "k": "𝓀",
-        "l": "𝓁",
-        "m": "𝓂",
-        "n": "𝓃",
-        "o": "𝑜",
-        "p": "𝓅",
-        "q": "𝓆",
-        "r": "𝓇",
-        "s": "𝓈",
-        "t": "𝓉",
-        "u": "𝓊",
-        "v": "𝓋",
-        "w": "𝓌",
-        "x": "𝓍",
-        "y": "𝓎",
-        "z": "𝓏",
-        "A": "𝒜",
-        "B": "𝐵",
-        "C": "𝒞",
-        "D": "𝒟",
-        "E": "𝐸",
-        "F": "𝐹",
-        "G": "𝒢",
-        "H": "𝐻",
-        "I": "𝐼",
-        "J": "𝒥",
-        "K": "𝒦",
-        "L": "𝐿",
-        "M": "𝑀",
-        "N": "𝒩",
-        "O": "𝒪",
-        "P": "𝒫",
-        "Q": "𝒬",
-        "R": "𝑅",
-        "S": "𝒮",
-        "T": "𝒯",
-        "U": "𝒰",
-        "V": "𝒱",
-        "W": "𝒲",
-        "X": "𝒳",
-        "Y": "𝒴",
-        "Z": "𝒵"
-    };
+function scriptify(text) {  
     var charArray = text.split("");
     for (var i = 0; i < charArray.length; i++) {
-        if (map[charArray[i].toLowerCase()]) {
-            charArray[i] = map[charArray[i]];
+        if (cursiveCharMapLight[charArray[i].toLowerCase()]) {
+            charArray[i] = cursiveCharMapLight[charArray[i]];
         }
     }
     text = charArray.join("");
@@ -2146,4 +2087,68 @@ const oldEnglishCharMap = {
   X: "𝔛",
   Y: "𝔜",
   Z: "ℨ",
+};
+var cursiveCharMapLight = {
+  "0": "𝟢",
+  "1": "𝟣",
+  "2": "𝟤",
+  "3": "𝟥",
+  "4": "𝟦",
+  "5": "𝟧",
+  "6": "𝟨",
+  "7": "𝟩",
+  "8": "𝟪",
+  "9": "𝟫",
+  "a": "𝒶",
+  "b": "𝒷",
+  "c": "𝒸",
+  "d": "𝒹",
+  "e": "𝑒",
+  "f": "𝒻",
+  "g": "𝑔",
+  "h": "𝒽",
+  "i": "𝒾",
+  "j": "𝒿",
+  "k": "𝓀",
+  "l": "𝓁",
+  "m": "𝓂",
+  "n": "𝓃",
+  "o": "𝑜",
+  "p": "𝓅",
+  "q": "𝓆",
+  "r": "𝓇",
+  "s": "𝓈",
+  "t": "𝓉",
+  "u": "𝓊",
+  "v": "𝓋",
+  "w": "𝓌",
+  "x": "𝓍",
+  "y": "𝓎",
+  "z": "𝓏",
+  "A": "𝒜",
+  "B": "𝐵",
+  "C": "𝒞",
+  "D": "𝒟",
+  "E": "𝐸",
+  "F": "𝐹",
+  "G": "𝒢",
+  "H": "𝐻",
+  "I": "𝐼",
+  "J": "𝒥",
+  "K": "𝒦",
+  "L": "𝐿",
+  "M": "𝑀",
+  "N": "𝒩",
+  "O": "𝒪",
+  "P": "𝒫",
+  "Q": "𝒬",
+  "R": "𝑅",
+  "S": "𝒮",
+  "T": "𝒯",
+  "U": "𝒰",
+  "V": "𝒱",
+  "W": "𝒲",
+  "X": "𝒳",
+  "Y": "𝒴",
+  "Z": "𝒵"
 };
