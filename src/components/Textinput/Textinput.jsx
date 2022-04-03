@@ -1,29 +1,23 @@
-import { TextField } from "@mui/material";
+import { TextField, InputBase } from "@mui/material";
 import React from "react";
 import { Bubble } from "../../styles/bubble";
 
-const Textinput = ({name, setName}) => {
+const Textinput = ({ name, setName }) => {
   return (
-    <div style={{position:"relative"}}>
-      <TextField
+    <div style={{ position: "relative" }}>
+      <InputBase
         fullWidth
         id="outlined-basic"
         label="Name"
         variant="outlined"
-        InputProps={{
-          sx: {
-            color: 'var(--orange)',
-            background: "#aeaeae33",
-            border: "none",
-            ".css-1d3z3hw-MuiOutlinedInput-notchedOutline": {
-              border: "none",
-            },
-            "&:hover": {
-              ".css-1d3z3hw-MuiOutlinedInput-notchedOutline": {
-                border: "2px solid #aeaeae33",
-              },
-            },
-          },
+        sx={{
+          borderRadius: "16px",
+          background: "#d3d3d34a",
+          padding: "10px",
+          textAlign: "center",
+          display: "flex",
+          alignItems: "center",
+          color: "var(--orange)",
         }}
         value={name}
         onChange={(e) => {

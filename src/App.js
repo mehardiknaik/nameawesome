@@ -1,28 +1,18 @@
-import { Container } from "@mui/material";
-import { useEffect, useState } from "react";
+import AOS from "aos";
 import "./App.css";
-import Awesometext from "./components/Awesometext/Awesometext";
-import Textinput from "./components/Textinput/Textinput";
-import { font } from "./config/font";
+import Main from "./pages/Main";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 function App() {
-  const [name, setName] = useState("Hardik Naik");
-  const [fonts, setFonts] = useState([]);
-
-  const fontFunction = () => {
-    setFonts(font(name));
-    console.log("Font function called", font(name));
-  };
   useEffect(() => {
-    fontFunction();
-  }, [name]);
+    AOS.init({ offset: 10 });
+    AOS.refresh();
+  }, []);
 
   return (
     <div className="App">
-      <Container>
-        <Textinput name={name} setName={setName} />
-        <Awesometext fonts={fonts} />
-      </Container>
+      <Main />
     </div>
   );
 }

@@ -1,16 +1,23 @@
 import React from "react";
 import { Bubble } from "../../styles/bubble";
-import { CardContainer, MainContainer } from "./style";
+import { Card, MainContainer } from "./style";
 
 const Awesometext = ({ fonts }) => {
   return (
     <MainContainer>
       {fonts.map((font, index) => {
         return (
-          <CardContainer key={index}>
-            {font.text}
-            {index % 9 == 0 && <Bubble color={'var(--yellow)'}/>}
-          </CardContainer>
+          <Card data-aos="zoom-in" key={index}>
+            <div>
+                <div>{font.text}</div> 
+                {/* <div>button</div>  */}
+              {index % 9 == 0 && (
+                <Bubble
+                  color={`hsl(${Math.floor(Math.random() * 360)} 98% 83%);`}
+                />
+              )}
+            </div>
+          </Card>
         );
       })}
     </MainContainer>
