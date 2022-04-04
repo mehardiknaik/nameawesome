@@ -79,9 +79,7 @@ function createMap(chars) {
 }
 
 export function forward(text) {
-  text = text.trim();
   if (text.length === 0) return [];
-  var finalText = "";
   const charMap = [
     {
       text: applyCharMap(oldEnglishCharMap, text),
